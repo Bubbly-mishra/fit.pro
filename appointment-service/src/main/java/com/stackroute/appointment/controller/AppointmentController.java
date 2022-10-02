@@ -77,5 +77,5 @@ public class AppointmentController {
             return new ResponseEntity<>("Couldn't find the appointment by user ID", HttpStatus.CONFLICT);
         }
         
-        
+     }   
     }
