@@ -68,5 +68,14 @@ public class AppointmentController {
         } catch (Exception e) {
             return new ResponseEntity<>("Couldn't find the appointment by user ID", HttpStatus.CONFLICT);
         }
+        
+        @DeleteMapping("/delete/{userId}")
+        public ResponseEntity<?> deleteAppointmentsByUserId(@PathVariable String userId) {
+        try {
+            return new ResponseEntity<>(appointmentService.deleteAppointmentByUserId(userId), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>("Couldn't find the appointment by user ID", HttpStatus.CONFLICT);
+        }
+        
+     }   
     }
-}
