@@ -78,4 +78,14 @@ public class AppointmentController {
         }
         
      }   
+        
+         @DeleteMapping("/deleteAll")
+        public ResponseEntity<?> deleteAllAppointment() {
+        try {
+            return new ResponseEntity<>(appointmentService.deleteAllAppointment(), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>("Couldn't find the appointment by user ID", HttpStatus.CONFLICT);
+        }
+        
+     } 
     }
