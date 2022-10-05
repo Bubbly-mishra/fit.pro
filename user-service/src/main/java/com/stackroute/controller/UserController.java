@@ -61,5 +61,12 @@ public class UserController {
         return new ResponseEntity<String>("Details are Updated", HttpStatus.OK);
     }
 
+    @DeleteMapping("/delete/{userId}")
+    public ResponseEntity<?> deleteExpertByEmailId(@PathVariable String emailId) {
+    try {
+    return new ResponseEntity<>(expertService.deleteExpertByEmailId(emailId), HttpStatus.OK);
+    } catch (Exception e) {
+    return new ResponseEntity<>("Couldn't find the expert by email ID", HttpStatus.CONFLICT);
+    }
 
 }
