@@ -12,6 +12,8 @@ public interface ExpertService {
     public Expert saveExpert(Expert expert) throws ExpertAlreadyExistsException;
 
     public Expert updateExpert(String emailId, ExpertUpdateRequest request);
-
+    
+    void deleteExpertByEmailId(String expertEmail);  
+     
     Optional<Expert> getExpertByUsername(String username) throws ExpertNotFoundException;
 }
