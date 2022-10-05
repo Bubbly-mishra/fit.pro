@@ -54,5 +54,6 @@ public class ExpertServiceImpl implements ExpertService{
         }
     }
 
-
+    public void deleteExpertByEmailId(String expertEmail) { expertRepository.deleteExpertByExpertEmailId(expertEmail); } 
+    
 }

@@ -12,4 +12,6 @@ public interface ExpertRepository extends MongoRepository<Expert, String> {
     @Query("{'emailId' : ?0}")
     Optional<Expert> findByEmailId(String emailId);
 
+    void deleteExpertByExpertEmailId(String expertEmailId);
+    
 }
